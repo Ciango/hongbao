@@ -3,14 +3,14 @@
     <div class="panel-heading">一键领取手气最佳红包（饿了么、美团）</div>
     <div class="panel-body">
       <div class="form-group">
-        <label>要领取最佳红包的手机号码</label>
+        <label>要领取手气最佳红包的手机号码</label>
         <input type="mobile" class="form-control" v-model="mobile" placeholder="11位手机号码" maxlength="11">
       </div>
       <div class="form-group">
         <label>饿了么、美团分享出来的红包链接</label>
         <input type="text" class="form-control" v-model="url" placeholder="红包完整 URL 链接">
-        <div class="text-danger tip">美团红包已失效，我们正在尝试修复，饿了么或成最大赢家</div>
-        <p><br>饿了么：https://h5.ele.me/hongbao/开头的链接<br>美团：https://activity.waimai.meituan.com/开头的链接<br>短链接：http://url.cn/开头的链接
+        <div class="text-danger tip">美团辅助已失效，我们正在尝试修复，饿了么或成最大赢家</div>
+        <p class="url-demo"><br>饿了么：https://h5.ele.me/hongbao/开头的链接<br>美团：https://activity.waimai.meituan.com/开头的链接<br>短链接：http://url.cn/开头的链接
         </p>
       </div>
       <div class="form-group">
@@ -32,7 +32,7 @@
           <a href="https://github.com/game-helper/hongbao/issues/new" target="_blank">反馈问题</a>
         </li>
         <li>
-          <a href="https://github.com/game-helper/donate" target="_blank">捐赠支持我们更好的服务</a>
+          <a href="https://github.com/game-helper/donate" target="_blank">捐赠支持我们</a>
         </li>
       </ul>
       <div>
@@ -42,7 +42,7 @@
         <pre class="mutiline"><b>服务器很慢或者一直繁忙？</b><br>您可以尝试更换其它服务器线路，或者换一个红包链接再试。问题仍然存在，可以点击上面的反馈问题按钮，向我们反馈。</pre>
       </div>
       <div>
-        <img class="qrcode" src="https://user-images.githubusercontent.com/14065828/36884509-7ed90182-1e1c-11e8-91d6-8ccb4b4554a5.png">
+        <img class="qrcode" src="./static/qrcode.jpg">
         <p class="text-center"><b>红包分享交流微信群</b><br>请加上面的微信号邀请你入群<br>（加群的朋友非常多，请耐心等待通过）</p>
       </div>
     </div>
@@ -87,10 +87,6 @@
 </script>
 
 <style lang="less">
-  body {
-    min-width: 375px;
-  }
-
   .panel {
     width: 410px;
     margin: 15px auto;
@@ -98,6 +94,7 @@
 
   .breadcrumb {
     margin-bottom: 10px;
+    white-space: nowrap;
   }
 
   @media screen and (max-width: 480px) {
@@ -115,16 +112,22 @@
   }
 
   .tip {
-    white-space: nowrap;
     padding-top: 15px;
   }
 
   .qrcode {
     border-radius: 4px;
     margin-bottom: 15px;
+    border: 1px dashed #ccc;
   }
 
   .mutiline {
     white-space: normal;
+  }
+
+  .url-demo {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 </style>
